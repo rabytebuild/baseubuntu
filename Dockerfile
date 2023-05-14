@@ -14,7 +14,7 @@ RUN echo 'root:Rabiu2004@' | chpasswd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Expose the SSH port (22) to the host
-EXPOSE 22
+EXPOSE 22/tcp
 
 # Start the SSH service when the container starts
 CMD ["/usr/sbin/sshd", "-D"]
